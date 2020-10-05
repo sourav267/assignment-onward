@@ -1,0 +1,14 @@
+<form [formGroup]="validatorForm" (ngSubmit)="onSubmit()">
+
+  <input type="text" formControlName="url">
+
+  <!-- error block -->
+  
+
+<button type="submit">Check the String</button>
+<div *ngIf="displaydiv">
+    {{
+      displayJson
+    }}
+  </div>
+</form>

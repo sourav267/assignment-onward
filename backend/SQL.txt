@@ -1,0 +1,12 @@
+CREATE TABLE `employee` (
+	`employee_id` BIGINT(10) NOT NULL AUTO_INCREMENT,
+	`employee_name` VARCHAR(50) NULL DEFAULT NULL,
+	`manager_id` BIGINT(20) NULL DEFAULT NULL,
+	PRIMARY KEY (`employee_id`),
+	CONSTRAINT `FK_MANAGER` FOREIGN KEY (`manager_id`) REFERENCES `employee` (`employee_id`)
+)
+
+SELECT E.employee_id, e.employee_name, m.employee_name as manager
+FROM
+    employee e, employee m
+WHERE e.manager_id = m.empno;
